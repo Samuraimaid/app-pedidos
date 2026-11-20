@@ -3,9 +3,8 @@
 
   var cfg = window.APP_PEDIDOS_CONFIG || {};
   var ALLOWED = cfg.allowedPrefix || "https://script.google.com/macros/s/";
-  var TIMEOUT = Number(cfg.loadTimeoutMs) || 15000;
+  var SPLASH_MS = Number(cfg.splashMs) || 600;
 
-  var frame = document.getElementById("app-frame");
   var splash = document.getElementById("splash");
   var errorScreen = document.getElementById("error-screen");
   var errorCopy = document.getElementById("error-copy");
@@ -13,14 +12,12 @@
   var installBtn = document.getElementById("install-btn");
   var installBtnError = document.getElementById("install-btn-error");
   var openBtns = document.querySelectorAll("[data-open-app]");
-  var chromeBar = document.getElementById("chrome");
 
   var deferredPrompt = null;
-  var loadTimer = null;
-  var loaded = false;
+  var splashTimer = null;
+  var navigating = false;
   var appUrl = resolveAppUrl();
 
-  frame.title = "App de Pedidos";
   openBtns.forEach(function (el) {
     el.setAttribute("href", appUrl);
   });
@@ -57,23 +54,13 @@
   });
 
   window.addEventListener("online", function () {
-    if (errorScreen && !errorScreen.classList.contains("is-hidden") && !loaded) {
+    if (errorScreen && !errorScreen.classList.contains("is-hidden") && !navigating) {
       startLoad();
     }
   });
 
   window.addEventListener("offline", function () {
-    if (!loaded) showError("offline");
-  });
-
-  frame.addEventListener("load", function () {
-    if (loaded) return;
-    loaded = true;
-    clearTimeout(loadTimer);
-    hide(splash);
-    hide(errorScreen);
-    frame.classList.remove("is-hidden");
-    show(chromeBar);
+    if (!navigating) showError();
   });
 
   startLoad();
@@ -92,33 +79,32 @@
   }
 
   function startLoad() {
-    loaded = false;
-    clearTimeout(loadTimer);
+    navigating = false;
+    clearTimeout(splashTimer);
     hide(errorScreen);
     show(splash);
-    hide(chromeBar);
-    frame.classList.add("is-hidden");
 
     if (!navigator.onLine) {
-      showError("offline");
+      showError();
       return;
     }
 
-    frame.src = appUrl;
-    loadTimer = setTimeout(function () {
-      if (!loaded) showError("timeout");
-    }, TIMEOUT);
+    splashTimer = setTimeout(function () {
+      if (!navigator.onLine) {
+        showError();
+        return;
+      }
+      navigating = true;
+      window.location.replace(appUrl);
+    }, SPLASH_MS);
   }
 
-  function showError(kind) {
-    clearTimeout(loadTimer);
+  function showError() {
+    navigating = false;
+    clearTimeout(splashTimer);
     hide(splash);
-    frame.classList.add("is-hidden");
     if (errorCopy) {
-      errorCopy.textContent =
-        kind === "offline"
-          ? "Parece que no hay internet. Revisá la conexión e intentá de nuevo."
-          : "La app tardó demasiado en cargar. Puede ser la conexión o que Google esté bloqueando la vista dentro de esta ventana.";
+      errorCopy.textContent = "Parece que no hay internet. Revisá la conexión e intentá de nuevo.";
     }
     show(errorScreen);
   }

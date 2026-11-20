@@ -18,16 +18,6 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div class="frame-wrap">
-      <iframe
-        id="app-frame"
-        class="is-hidden"
-        title="App de Pedidos"
-        allow="camera; clipboard-write"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
-
     <div id="splash" class="overlay" role="status" aria-live="polite" aria-label="Cargando la App de Pedidos">
       <div class="panel">
         <picture>
@@ -65,10 +55,6 @@
           <button id="install-btn-error" class="is-hidden" type="button">Instalar app</button>
         </div>
       </div>
-    </div>
-
-    <div id="chrome" class="chrome is-hidden">
-      <a class="btn" id="open-btn" data-open-app href="#" target="_blank" rel="noopener noreferrer" title="Si ves una pantalla en blanco, abrí la app en el navegador">Abrir en el navegador</a>
     </div>
 
     <script src="./config.js"></script>
