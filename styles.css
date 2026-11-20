@@ -7,11 +7,27 @@
 }
 
 @font-face {
-  font-family: "Krona One";
+  font-family: "Michroma";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("./fonts/krona-one.woff2") format("woff2");
+  src: url("./fonts/michroma.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Chakra Petch";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./fonts/chakra-petch-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Chakra Petch";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/chakra-petch-700.woff2") format("woff2");
 }
 
 :root {
@@ -23,7 +39,7 @@
   --accent-soft: rgba(225, 6, 0, 0.14);
   --text: #f4f4f5;
   --muted: #a1a1aa;
-  --heading: "Krona One", "Inter", system-ui, sans-serif;
+  --heading: "Michroma", "Chakra Petch", sans-serif;
   --body: "Inter", system-ui, sans-serif;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
@@ -74,21 +90,12 @@ html, body {
 
 .splash-title {
   margin: 0 0 8px;
-  font-family: var(--body);
-  font-weight: 700;
-  font-size: 1.45rem;
-  letter-spacing: -0.02em;
+  font-family: var(--heading);
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--text);
-}
-
-@media (min-width: 768px) {
-  .splash-title {
-    font-family: var(--heading);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    font-size: 1.05rem;
-    font-weight: 400;
-  }
 }
 
 .splash-sub,

@@ -60,8 +60,8 @@ Todavía no hay un APK. Cuando lo quieras, se puede empaquetar esta misma págin
 | `index.html` | Pantalla de carga (logo + spinner de barras) y pantalla sin conexión |
 | `config.js` | URL de la app de Apps Script y duración del splash |
 | `app.js` | Si hay internet, después de ~600 ms abre la URL de Apps Script con `location.replace`. Si no, muestra **Sin conexión** |
-| `styles.css` | Estilo (fondo `#121214`, acento `#E10600`, Krona One en pantallas anchas e Inter en el celular) |
+| `styles.css` | Estilo (fondo `#121214`, acento `#E10600`, títulos en Michroma con respaldo Chakra Petch, cuerpo en Inter) |
 | `manifest.webmanifest` | Nombre, íconos y modo `standalone` |
-| `sw.js` | Cachea solo esta cáscara (versión `app-pedidos-shell-v5`). Nunca guarda el contenido de `script.google.com` |
+| `sw.js` | Cachea solo esta cáscara (versión `app-pedidos-shell-v6`). Nunca guarda el contenido de `script.google.com` |
 | `img/` | Logo de Mc-LarenS y el SVG canónico del spinner de barras |
-| `icons/` y `fonts/` | Íconos con el spinner Mc-LarenS (barras + M) e íconos para iPhone, más las fuentes Inter y Krona One |
+| `icons/` y `fonts/` | Íconos con el spinner Mc-LarenS (barras + M) e íconos para iPhone, más las fuentes Inter, Michroma y Chakra Petch |

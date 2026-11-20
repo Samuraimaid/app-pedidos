@@ -1,7 +1,7 @@
 /* Service worker del envoltorio. Cachea solo la cáscara (HTML, CSS, JS, íconos y fuentes).
  * Nunca intercepta ni guarda contenido de script.google.com ni de otros dominios de Google.
  */
-const CACHE_NAME = "app-pedidos-shell-v5";
+const CACHE_NAME = "app-pedidos-shell-v6";
 const SHELL = [
   "./",
   "./index.html",
@@ -19,7 +19,9 @@ const SHELL = [
   "./img/mclarens-logo.webp",
   "./img/mclarens-spinner.svg",
   "./fonts/inter-latin.woff2",
-  "./fonts/krona-one.woff2"
+  "./fonts/michroma.woff2",
+  "./fonts/chakra-petch-600.woff2",
+  "./fonts/chakra-petch-700.woff2"
 ];
 
 self.addEventListener("install", function (event) {
