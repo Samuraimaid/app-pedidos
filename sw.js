@@ -1,7 +1,7 @@
 /* Service worker del envoltorio. Cachea solo la cáscara (HTML, CSS, JS, íconos y fuentes).
  * Nunca intercepta ni guarda contenido de script.google.com ni de otros dominios de Google.
  */
-const CACHE_NAME = "app-pedidos-shell-v6";
+const CACHE_NAME = "app-pedidos-shell-v7";
 const SHELL = [
   "./",
   "./index.html",

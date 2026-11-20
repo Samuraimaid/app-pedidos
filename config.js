@@ -5,7 +5,7 @@
  */
 window.APP_PEDIDOS_CONFIG = {
   defaultUrl:
-    "https://script.google.com/macros/s/AKfycbye_0y0M9NEPOiPKMd4-z3-aPLQL5V0emwzNsdfdctuziX0EMzkT0EEN2ILDH5EDrkb/exec",
+    "https://script.google.com/macros/s/AKfycbxcRTpQp4yUua96d18Rr1BjauB4hWDYgXGtF_3egbLCuyQRcQE377BzexAQP8NYiHev/exec",
   allowedPrefix: "https://script.google.com/macros/s/",
   splashMs: 600
 };
