@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#121214">
+    <meta name="color-scheme" content="dark">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Pedidos">
+    <meta name="description" content="App de Pedidos de Mc-LarenS: órdenes de compra a proveedores.">
+    <title>App de Pedidos</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" type="image/png" sizes="48x48" href="./icons/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png">
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="frame-wrap">
+      <iframe
+        id="app-frame"
+        class="is-hidden"
+        title="App de Pedidos"
+        allow="camera; clipboard-write"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <div id="splash" class="overlay" role="status" aria-live="polite">
+      <div class="panel">
+        <div class="mark">
+          <img src="./icons/icon-192.png" width="96" height="96" alt="">
+        </div>
+        <h1 class="splash-title">App de Pedidos</h1>
+        <p class="splash-sub">Cargando las órdenes…</p>
+        <div class="spinner" aria-hidden="true"></div>
+        <div class="actions">
+          <button id="install-btn" class="btn-primary is-hidden" type="button">Instalar app</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="error-screen" class="overlay is-hidden" role="alert">
+      <div class="panel">
+        <div class="mark">
+          <img src="./icons/icon-192.png" width="96" height="96" alt="">
+        </div>
+        <h1 class="splash-title">Sin conexión</h1>
+        <p id="error-copy" class="error-copy">
+          No se pudo cargar la App de Pedidos. Revisá tu internet e intentá de nuevo.
+        </p>
+        <div class="actions">
+          <button id="retry-btn" class="btn-primary" type="button">Reintentar</button>
+          <a class="btn" data-open-app href="#" target="_blank" rel="noopener noreferrer">Abrir en el navegador</a>
+          <button id="install-btn-error" class="is-hidden" type="button">Instalar app</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="chrome" class="chrome is-hidden">
+      <a class="btn" id="open-btn" data-open-app href="#" target="_blank" rel="noopener noreferrer" title="Si ves una pantalla en blanco, abrí la app en el navegador">Abrir en el navegador</a>
+    </div>
+
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
