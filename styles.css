@@ -78,25 +78,15 @@ html, body {
 .overlay.is-hidden { display: none; }
 
 .panel {
-  width: min(420px, 100%);
+  width: min(640px, 100%);
   text-align: center;
 }
 
-.mark {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 22px;
-  border-radius: 22px;
-  overflow: hidden;
-  background: var(--bg-deep);
-  border: 1px solid var(--border);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-}
-
-.mark img {
+.brand-logo {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: min(600px, 70vw, 100%);
+  height: auto;
+  margin: 0 auto 28px;
 }
 
 .splash-title {

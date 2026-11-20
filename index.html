@@ -28,13 +28,12 @@
       ></iframe>
     </div>
 
-    <div id="splash" class="overlay" role="status" aria-live="polite">
+    <div id="splash" class="overlay" role="status" aria-live="polite" aria-label="Cargando la App de Pedidos">
       <div class="panel">
-        <div class="mark">
-          <img src="./icons/icon-192.png" width="96" height="96" alt="">
-        </div>
-        <h1 class="splash-title">App de Pedidos</h1>
-        <p class="splash-sub">Cargando las órdenes…</p>
+        <picture>
+          <source type="image/webp" srcset="./img/mclarens-logo.webp">
+          <img class="brand-logo" src="./img/mclarens-logo.png" width="600" height="85" alt="Mc-LarenS">
+        </picture>
         <div class="spinner" aria-hidden="true"></div>
         <div class="actions">
           <button id="install-btn" class="btn-primary is-hidden" type="button">Instalar app</button>
@@ -44,9 +43,10 @@
 
     <div id="error-screen" class="overlay is-hidden" role="alert">
       <div class="panel">
-        <div class="mark">
-          <img src="./icons/icon-192.png" width="96" height="96" alt="">
-        </div>
+        <picture>
+          <source type="image/webp" srcset="./img/mclarens-logo.webp">
+          <img class="brand-logo" src="./img/mclarens-logo.png" width="600" height="85" alt="Mc-LarenS">
+        </picture>
         <h1 class="splash-title">Sin conexión</h1>
         <p id="error-copy" class="error-copy">
           No se pudo cargar la App de Pedidos. Revisá tu internet e intentá de nuevo.
