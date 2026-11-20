@@ -56,5 +56,5 @@ Todavía no hay un APK. Cuando lo quieras, se puede empaquetar esta misma págin
 | `app.js` | Carga del iframe, tiempo de espera, instalación y reintentos |
 | `styles.css` | Estilo (fondo `#121214`, acento `#E10600`, Krona One en pantallas anchas e Inter en el celular) |
 | `manifest.webmanifest` | Nombre, íconos y modo `standalone` |
-| `sw.js` | Cachea solo esta cáscara (versión `app-pedidos-shell-v1`). Nunca guarda el contenido de `script.google.com` |
+| `sw.js` | Cachea solo esta cáscara (versión `app-pedidos-shell-v2`). Nunca guarda el contenido de `script.google.com` |
 | `icons/` y `fonts/` | Íconos e íconos para iPhone, más las fuentes Inter y Krona One |
